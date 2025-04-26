@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: #eaeaea;
+}
+
+.game {
+  width: 800px;
+  height: 200px;
+  border: 2px solid #333;
+  margin: 100px auto;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.background {
+  width: 1600px;
+  height: 200px;
+  /* background: repeating-linear-gradient(
+    to right,
+    #cfcfcf 0 10px,
+    #ffffff 10px 20px
+  ); */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: scrollBg 5s linear infinite;
+  z-index: 0;
+}
+
+@keyframes scrollBg {
+  from {
+    left: 0;
+  }
+  to {
+    left: -800px;
+  }
+}
+
+#dino {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  z-index: 2;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.jump {
+  animation: jump 0.5s linear;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 110px;
+  } /* tăng độ cao thêm ~30px */
+  100% {
+    bottom: 0;
+  }
+}
+
+#cactus {
+  width: 25px;
+  height: 40px;
+  background-image: url("/images/cactus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 0;
+  left: 800px;
+  z-index: 1;
+}
+
+#bird {
+  width: 40px;
+  height: 0px;
+  background-image: url("/images/bird.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 60px;
+  left: 800px;
+  z-index: 1;
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 18px;
+  color: #333;
+  z-index: 3;
+}
+
+/* Day-Night Background Transitions */
+.day {
+  background-color: #f0f0f0;
+}
+
+.sunset {
+  background-color: #f7b267;
+}
+
+.night {
+  background-color: #1e1e30;
+}
+
+/* Dino + Obstacle color transitions */
+.dino-day {
+  background-color: green;
+}
+.dino-sunset {
+  background-color: orangered;
+}
+.dino-night {
+  background-color: lightblue;
+}
+
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  color: white;
+}
+
+#title-menu {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.character-option {
+  width: 80px;
+  height: 80px;
+  border: 3px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.character-option img {
+  width: 100%;
+  height: auto;
+}
+
+.character-option.selected {
+  border-color: yellow;
+}
+
+.character-option.locked {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.lock-text {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: yellow;
+}
+
+#start-game {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
