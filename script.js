@@ -111,7 +111,7 @@ const characterMenu = document.getElementById("character-menu");
 const characterOptions = document.querySelectorAll(".character-option");
 const startGameBtn = document.getElementById("start-game");
 
-let selectedSkin = "/images/green-dino.png"; // mặc định
+let selectedSkin = "images/green-dino.png"; // mặc định
 
 // Unlock logic và chọn skin
 characterOptions.forEach(option => {

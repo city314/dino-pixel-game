@@ -74,7 +74,7 @@ body {
 #cactus {
   width: 25px;
   height: 40px;
-  background-image: url("/images/cactus.png");
+  background-image: url("images/cactus.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -87,7 +87,7 @@ body {
 #bird {
   width: 40px;
   height: 0px;
-  background-image: url("/images/bird.png");
+  background-image: url("images/bird.png");
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
